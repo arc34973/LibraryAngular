@@ -1,0 +1,37 @@
+  <div class="container-fluid">
+    <div class="container xd-container">
+  
+      <h2>Book Information</h2>
+  
+  
+      <table class="table table-striped">
+        <tr>
+          <th>Title</th>
+          <td><b>{{ book.title }}</b></td>
+        </tr>
+        <tr>
+          <th>Author</th>
+          <td>{{ book.author }}</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>{{ book.status }}</td>
+        </tr>
+        <tr>
+          <th>Type</th>
+          <td>{{ book.type }}</td>
+        </tr>
+        
+      </table>
+  
+      <button class="btn btn-default" (click)="gotoBooksList()"> Back</button>
+      <button class="btn btn-default" (click)="editBook()">Edit Book</button>
+      <button class="btn btn-default" (click)="showBorrowHistory(book)">Borrow History</button>
+      <br/>
+      <br/>
+      <br/>
+      
+      
+    </div>
+  </div>
+  

@@ -1,0 +1,31 @@
+
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>Users</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Status</th>
+          <th>Type</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let book of books">
+           <td class="ownerFullName"><a routerLink="/books/{{book.id}}" routerLinkActive="active"
+            (click)="onSelect(book)">{{ book.title }}</a></td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.status }}</td>
+          <td>{{ book.type }}</td>
+          <td>
+        </tbody>
+      </table>
+      <div>
+        <button class="btn btn-default" (click)="addBook()">Add Book</button>
+      </div>
+    </div>
+  </div>
+</div>

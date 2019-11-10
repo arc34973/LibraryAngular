@@ -1,0 +1,64 @@
+
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>
+      New Book
+    </h2>
+    <form (ngSubmit)="onSubmit(bookForm.value)" #bookForm="ngForm" class="form-horizontal">
+      <div class="form-group" hidden="true">
+        <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="book.id" name="id"/>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="title.dirty && title.valid" [class.has-error]="title.dirty &&  !title.valid">
+        <label for="title" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="title" [(ngModel)]="book.title" minlength="1" required name="title" #title="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="title.valid" [class.glyphicon-remove]="!title.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="title.dirty && title.hasError('required')">Title is required</span>
+          <span class="help-block" *ngIf="title.dirty && title.hasError('minlength')">Title must be at least 1 character long</span>
+        </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="author.dirty && author.valid" [class.has-error]="author.dirty && !author.valid">
+        <label for="author" class="col-sm-2 control-label">Author</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="author" [(ngModel)]="book.author" name="author" minlength="2" required #author="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="author.valid" [class.glyphicon-remove]="!author.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="author.dirty && author.hasError('required')">Author is required</span>
+          <span class="help-block" *ngIf="author.dirty && author.hasError('minlength')">Author must be at least 2 characters long</span>
+        </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="author.dirty && author.valid" [class.has-error]="author.dirty && !author.valid">
+        <label for="author" class="col-sm-2 control-label">Author</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="author" [(ngModel)]="book.author" name="author" required #author="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="author.valid" [class.glyphicon-remove]="!author.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="author.dirty && author.hasError('required')">Author is required</span>
+        </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="status.dirty && status.valid" [class.has-error]="status.dirty && !status.valid">
+        <label for="status" class="col-sm-2 control-label">Status</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="status" [(ngModel)]="book.status" name="status" required #status="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="status.valid" [class.glyphicon-remove]="!status.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="status.dirty && status.hasError('required')">Status is required</span>
+          </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="type.dirty && type.valid" [class.has-error]="type.dirty && !type.valid">
+        <label for="type" class="col-sm-2 control-label">Type</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="type" [(ngModel)]="book.type" name="type" required #type="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="type.valid" [class.glyphicon-remove]="!type.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="type.dirty && type.hasError('required')">Type is required</span>
+          </div>
+      </div>
+
+      
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-default" type="button" (click)="gotoBooksList()">Back</button>
+          <button class="btn btn-default" type="submit" [disabled]="!bookForm.valid">Add Book</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

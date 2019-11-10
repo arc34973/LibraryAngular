@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>Borrow History</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date Borrow</th>
+          <th>Date TurnBack</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let borrowhistory of borrowhistories">
+          <td>{{ borrowhistory.book.title }}</td>
+          <td>{{ borrowhistory.user.firstName }}</td>
+          <td>{{ borrowhistory.user.lastName }}</td>
+          <td>{{ borrowhistory.dateBorrow }}</td>
+          <td>{{ borrowhistory.dateTurnBack }}</td>
+
+          <td>
+        </tbody>
+      </table>
+     
+    </div>
+  </div>
+</div>
+
+

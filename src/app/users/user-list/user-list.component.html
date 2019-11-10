@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>Users</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>User Name</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let user of users">
+          <td class="ownerFullName"><a routerLink="/users/{{user.id}}" routerLinkActive="active"
+                                       (click)="onSelect(user)">{{ user.firstName }} {{ user.lastName }}</a></td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.role }}</td>
+          <td>{{ user.status }}</td>
+          <td>{{ user.userName }}</td>
+
+          <td>
+        </tbody>
+      </table>
+      <div>
+        <button class="btn btn-default" (click)="addUser()">Add User</button>
+      </div>
+    </div>
+  </div>
+</div>
+

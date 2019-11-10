@@ -1,0 +1,62 @@
+
+<div class="container-fluid">
+
+<nav class="navbar navbar-default " role="navigation">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#"><span></span></a>
+  </div>
+
+    <ul class="nav navbar-nav">
+      <li>
+        <a routerLink="welcome" title="home page">
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+          <span>Home</span>
+        </a>
+      </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/users"><span class="glyphicon glyphicon-search"
+                                            aria-hidden="true"></span><span> All Users</span></a></li>
+          <li><a routerLink="/users/add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span> Add New User</span></a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">Books<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/books"><span class="glyphicon glyphicon-search"
+                                            aria-hidden="true"></span><span> All Books</span></a></li>
+          <li><a routerLink="/books/add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span> Add New Book</span></a>
+          </li>
+        </ul>
+      </li>
+     
+    </ul>
+
+  </div>
+</nav>
+
+</div>
+
+
+
+<router-outlet></router-outlet>
+
+<br/>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center"><img src="./assets/images/angular.png"
+                                         alt="Angular" height="80" width="80"/>
+      <img src="./assets/images/spring-pivotal-logo.png"
+           alt="Sponsored by Pivotal"/></div>
+  </div>
+</div>
